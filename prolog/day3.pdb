@@ -1,0 +1,4 @@
+%chess game
+:- use_module(library(clpfd)).
+queens([(X1,Y1),(X2,Y2),(X3,Y3)]).
+

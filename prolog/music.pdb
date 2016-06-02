@@ -1,0 +1,15 @@
+plays(laolao,piano).
+plays(riue,violine).
+plays(hendricks,guitar).
+plays(me,harmonica).
+plays(einstein,violene).
+plays(davis,trumpet).
+plays(mozart,violene).
+plays(elvis,singer).
+plays(ringo,guitar).
+
+genre(elvis,rockroll).
+genre(mozart,classic).
+genre(davis,jazz).
+genre(bach,baroque).
+

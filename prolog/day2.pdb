@@ -1,0 +1,40 @@
+%prolog
+reversed([],Acc,Acc).
+reversed([Head|Tail],Acc,R) :-
+    reversed(Tail,[Head|Acc],R).
+
+smallest(A,B,C) :-
+    A>B,C=B;
+    C=A.
+smallestAr([Head|Tail],Res) :-
+    smallestAr(Tail,Head,Res).
+smallestAr([],A,A).
+smallestAr([Head|Tail],Acc,Res) :-
+    smallest(Head,Acc,A),
+    smallestAr(Tail,A,Res).
+
+insertu(V,[],[V]).
+insertu(V,[Head|Tail],[V,Head|Tail]) :-
+    V>Head.
+insertu(V,[Head|Tail],[Head|R]) :-
+    writeln(V),
+    insertu(V,Tail,R).
+
+sortu([],Res,Res).
+sortu([Head|Tail],R,Res) :-
+    insertu(Head,R,Result),
+    writeln(Result),
+    sortu(Tail,Result,Res).
+
+insert_sort(List,Sorted):-
+    i_sort(List,[],Sorted).
+i_sort([],Acc,Acc).
+i_sort([H|T],Acc,Sorted):-
+    insert(H,Acc,NAcc),
+    i_sort(T,NAcc,Sorted).
+   
+insert(X,[Y|T],[Y|NT]):-
+    X>Y,insert(X,T,NT).
+insert(X,[Y|T],[X,Y|T]):-
+    X=<Y.
+insert(X,[],[X]).
